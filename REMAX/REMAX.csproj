@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD1AA2FE-B68F-4C3E-BECB-855E7FF72634}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>REMAX</RootNamespace>
+    <AssemblyName>REMAX</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="EnumEmpType.cs" />
+    <Compile Include="EnumHuoseType.cs" />
+    <Compile Include="GUI\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AdminManageHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminManageHouse.Designer.cs">
+      <DependentUpon>AdminManageHouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AgentClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AgentClients.Designer.cs">
+      <DependentUpon>AgentClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AgentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AgentForm.Designer.cs">
+      <DependentUpon>AgentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AgentHouses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AgentHouses.Designer.cs">
+      <DependentUpon>AgentHouses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ClientHouses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ClientHouses.Designer.cs">
+      <DependentUpon>ClientHouses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\id.cs" />
+    <Compile Include="GUI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManageClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManageClients.Designer.cs">
+      <DependentUpon>ManageClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManageEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManageEmployees.Designer.cs">
+      <DependentUpon>ManageEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="House.cs" />
+    <Compile Include="Migrations\201912190401180_CreateRemax.cs" />
+    <Compile Include="Migrations\201912190401180_CreateRemax.designer.cs">
+      <DependentUpon>201912190401180_CreateRemax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912191122406_updatedCode.cs" />
+    <Compile Include="Migrations\201912191122406_updatedCode.designer.cs">
+      <DependentUpon>201912191122406_updatedCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912200132505_addnew.cs" />
+    <Compile Include="Migrations\201912200132505_addnew.designer.cs">
+      <DependentUpon>201912200132505_addnew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912200811076_final.cs" />
+    <Compile Include="Migrations\201912200811076_final.designer.cs">
+      <DependentUpon>201912200811076_final.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912200842471_final1.cs" />
+    <Compile Include="Migrations\201912200842471_final1.designer.cs">
+      <DependentUpon>201912200842471_final1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912202251420_final11.cs" />
+    <Compile Include="Migrations\201912202251420_final11.designer.cs">
+      <DependentUpon>201912202251420_final11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912202258446_finalclasses.cs" />
+    <Compile Include="Migrations\201912202258446_finalclasses.designer.cs">
+      <DependentUpon>201912202258446_finalclasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912210049271_last.cs" />
+    <Compile Include="Migrations\201912210049271_last.designer.cs">
+      <DependentUpon>201912210049271_last.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemaxContext.cs" />
+    <EmbeddedResource Include="GUI\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdminManageHouse.resx">
+      <DependentUpon>AdminManageHouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AgentClients.resx">
+      <DependentUpon>AgentClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AgentForm.resx">
+      <DependentUpon>AgentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AgentHouses.resx">
+      <DependentUpon>AgentHouses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ClientHouses.resx">
+      <DependentUpon>ClientHouses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManageClients.resx">
+      <DependentUpon>ManageClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManageEmployees.resx">
+      <DependentUpon>ManageEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912190401180_CreateRemax.resx">
+      <DependentUpon>201912190401180_CreateRemax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912191122406_updatedCode.resx">
+      <DependentUpon>201912191122406_updatedCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912200132505_addnew.resx">
+      <DependentUpon>201912200132505_addnew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912200811076_final.resx">
+      <DependentUpon>201912200811076_final.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912200842471_final1.resx">
+      <DependentUpon>201912200842471_final1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912202251420_final11.resx">
+      <DependentUpon>201912202251420_final11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912202258446_finalclasses.resx">
+      <DependentUpon>201912202258446_finalclasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912210049271_last.resx">
+      <DependentUpon>201912210049271_last.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="myadmin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\why-remax-1170x0-c-center.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\why-remax-1170x0-c-center1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\countries-of-remax.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReMax-emblem.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remax-market-dominator-rev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\content-about-photo-1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>
